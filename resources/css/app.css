@@ -1,0 +1,333 @@
+/* ========================= */
+/*   GLOBAL DARK THEME       */
+/* ========================= */
+
+html, body {
+    font-family: 'Inter', sans-serif !important;
+    margin: 0;
+    padding: 0;
+    color: #ffffff !important;
+    background: #0b0d11;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    animation: fadeIn 1.2s ease-out forwards;
+    position: relative;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Glow effects */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 900px;
+    height: 900px;
+    filter: blur(90px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::before {
+    top: -250px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(255,215,0,0.14), transparent 70%);
+}
+
+body::after {
+    bottom: -250px;
+    right: -150px;
+    background: radial-gradient(circle, rgba(0,120,255,0.18), transparent 70%);
+    filter: blur(110px);
+}
+
+/* ========================= */
+/*   BRAND TEXT              */
+/* ========================= */
+
+.brand-title,
+.brand-accent {
+    font-weight: 800;
+    background: linear-gradient(135deg, #e6e6e6, #bfbfbf, #f2f2f2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brand-title {
+    font-size: 1.7rem;
+}
+
+.hero-title {
+    font-size: 3.4rem;
+    font-weight: 800;
+    color: #ffffff !important;
+    text-shadow: 0 0 18px rgba(0,120,255,0.25);
+}
+
+/* ========================= */
+/*   NAVBAR (GLASS)          */
+/* ========================= */
+
+.glass-nav {
+    background: rgba(255,255,255,0.04) !important;
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.glass-nav .navbar-brand,
+.glass-nav .nav-link,
+.glass-nav .btn {
+    color: #ffffff !important;
+}
+
+.glass-btn {
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    backdrop-filter: blur(10px);
+    color: #ffffff !important;
+    transition: 0.3s;
+}
+
+.glass-btn:hover {
+    background: rgba(255,255,255,0.12) !important;
+    color: #FFD700 !important;
+}
+
+/* ========================= */
+/*   HERO SECTION            */
+/* ========================= */
+
+.hero {
+    height: 600px;
+    border-radius: 26px;
+    background: url('/images/hero.jpg') center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+    animation: heroFade 1.2s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes heroFade {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(1px);
+    border-radius: 26px;
+}
+
+/* ========================= */
+/*   GLASS CARDS             */
+/* ========================= */
+
+.glass-card {
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 22px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    overflow: hidden;
+    transition: 0.35s;
+    color: #ffffff !important;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 18px 42px rgba(0,120,255,0.35);
+    border-color: rgba(0,120,255,0.35);
+}
+
+.card-img-top {
+    height: 240px;
+    object-fit: cover;
+}
+
+/* ========================= */
+/*   SECTION HEADERS         */
+/* ========================= */
+
+.section-title {
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff !important;
+}
+
+.section-line {
+    width: 90px;
+    height: 5px;
+    background: #ffd700;
+    border-radius: 3px;
+    margin: 0 auto 40px auto;
+    animation: lineGrow 1.2s ease-out forwards;
+    transform-origin: center;
+    transform: scaleX(0);
+}
+
+@keyframes lineGrow {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
+
+/* ========================= */
+/*   LOGIN PAGE              */
+/* ========================= */
+
+.login-page {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 360px;
+    padding: 32px 34px 36px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 6px 22px rgba(0,0,0,0.38);
+    position: relative;
+    z-index: 2;
+}
+
+.login-title {
+    font-size: 1.55rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-label {
+    font-size: 0.78rem;
+    opacity: 0.75;
+    margin-bottom: 3px;
+    display: block;
+}
+
+.login-input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    color: #fff;
+    font-size: 0.88rem;
+    transition: 0.2s;
+}
+
+.login-input:focus {
+    border-color: #FFD700;
+    background: rgba(255,255,255,0.12);
+}
+
+.login-button {
+    background: linear-gradient(135deg, #FFD700, #f5c400);
+    color: #000;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 0.9rem;
+    transition: 0.25s;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(255,215,0,0.35);
+}
+
+/* ========================= */
+/*   SERVICES GRID           */
+/* ========================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+    animation: fadeIn 0.6s ease;
+    transition: 0.35s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+}
+
+.service-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.4s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.08);
+}
+
+.service-content {
+    padding: 20px;
+}
+
+.service-title,
+.service-price {
+    font-weight: 700;
+    color: #FFD700;
+}
+
+.service-title {
+    font-size: 1.3rem;
+}
+
+.service-price {
+    font-size: 1.1rem;
+}
+
+.btn-view {
+    display: inline-block;
+    padding: 10px 18px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.btn-view:hover {
+    background: rgba(255,255,255,0.25);
+}
